@@ -2,7 +2,7 @@
 describe('My Fist Test', function () {
     it('Visit the web booking', function () {
 
-        cy.visit('https://wb.lab.qup.vn/booking.html?fleet=life')
+        cy.visit('https://wb.beta.qup.vn/booking.html?fleet=testbeta1')
 
         // cy.pause()
 
@@ -25,14 +25,15 @@ describe('My Fist Test', function () {
             .wait(1000)
             .type('{downarrow}{enter}')
 
-        cy.wait(500)
+        cy.wait(1000)
+        cy.screenshot()
         cy.get('#contentStep1 > div > a > span').click()
 
         cy.wait(4000)
         cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(1) > span:nth-child(2) > span')
-            .should('contain', '₫71,918')
+            .should('contain', '$89.17')
         cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(2) > span > span')
-            .should('contain', '7 km')
+            .should('contain', '4.4 mi')
         cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(3) > span > span')
             .should('contain', '17 minutes')
 
@@ -52,8 +53,8 @@ describe('My Fist Test', function () {
 
         cy.get('input[type="tel"]')
             .clear()
-            .type('906777888')
-            .should('have.value', '+84906777888')
+            .type('2057778888')
+            .should('have.value', '+12057778888')
 
         cy.get('input[name="email"]')
             .type('tester.qup@gmail.com', { delay: 100 })
@@ -73,11 +74,13 @@ describe('My Fist Test', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('AUTOTEST')
-            .should('have.value', 'AUTOTEST')
+            .type('NAM2019A')
+            .should('have.value', 'NAM2019A')
+        cy.wait(1000)
+        cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
+        cy.wait(2000)
         cy.screenshot()
-        cy.wait(500)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 
         // Payment
@@ -97,7 +100,7 @@ describe('My Fist Test', function () {
         cy.get('input[name="cvv"]')
             .type('123')
             .should('have.value', '123')
-
+        cy.screenshot()
         cy.wait(500)
         cy.get('#app > div:nth-child(4) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 
@@ -130,10 +133,11 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '₫75,187')
+                cy.get('td[class="val confirmEta"]').should('contain', '$73.15')
             })
 
-        cy.wait(500)
+        cy.wait(1000)
+        cy.screenshot()
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.btns > a.btn.btn-primary.btn-next.align-right > span')
             .should('contain', 'Book for NOW')
             .click()
@@ -145,6 +149,8 @@ describe('My Fist Test', function () {
             .should('contain', 'Looking forward to serving you!')
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(2) > div.message-panel > div.message')
             .should('contain', 'Thank you for choosing our service.')
+        cy.screenshot()
+
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(2) > div.btns > a:nth-child(1) > span')
             .should('contain', 'Close')
 
