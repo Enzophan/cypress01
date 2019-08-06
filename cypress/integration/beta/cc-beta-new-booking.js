@@ -20,12 +20,12 @@ describe('My Fist Test', function () {
         cy.get('#root > div > div.fill > div.sidebar-wrapper > ul > li:nth-child(2) > a > div.menu-text > span', { timeout: 10000 })
             .click()
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div.form-group > div > div > input')
+        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > input')
             .type('2 quang trung da nang')
             .wait(1000)
             .type('{downarrow}{enter}')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div > div > input')
+        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div > div > input')
             .type('furama da nang')
             .wait(1000)
             .type('{downarrow}{enter}')
@@ -100,6 +100,7 @@ describe('My Fist Test', function () {
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div.new-booking-button-container.col-xs-12 > div > button.btn-save.btn.btn-default')
             .click()
 
+        cy.wait(5000)
     })
 
 
@@ -123,12 +124,12 @@ describe('My Fist Test', function () {
         cy.get('#root > div > div.fill > div.sidebar-wrapper > ul > li:nth-child(2) > a > div.menu-text > span', { timeout: 10000 })
             .click()
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div.form-group > div > div > input')
+        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > input')
             .type('2 quang trung da nang')
             .wait(1000)
             .type('{downarrow}{enter}')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div > div > input')
+        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div > div > input')
             .type('furama da nang')
             .wait(1000)
             .type('{downarrow}{enter}')
