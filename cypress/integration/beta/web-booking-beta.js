@@ -25,7 +25,7 @@ describe('My Fist Test', function () {
             .type('{downarrow}{enter}')
 
         cy.wait(1000)
-        cy.screenshot()
+        // cy.screenshot()
         cy.get('#contentStep1 > div > a > span').click()
 
         cy.wait(4000)
@@ -36,7 +36,7 @@ describe('My Fist Test', function () {
         // cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(3) > span > span')
         //     .should('contain', '17 minutes')
 
-        cy.screenshot()
+        // cy.screenshot()
         cy.wait(500)
 
         cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.selectDiv > a:nth-child(1)').click()
@@ -79,7 +79,7 @@ describe('My Fist Test', function () {
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
         cy.wait(2000)
-        cy.screenshot()
+        // cy.screenshot()
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 
         // Payment
@@ -99,7 +99,7 @@ describe('My Fist Test', function () {
         cy.get('input[name="cvv"]')
             .type('123')
             .should('have.value', '123')
-        cy.screenshot()
+        // cy.screenshot()
         cy.wait(500)
         cy.get('#app > div:nth-child(4) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 
@@ -136,7 +136,7 @@ describe('My Fist Test', function () {
             })
 
         cy.wait(1000)
-        cy.screenshot()
+        // cy.screenshot()
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.btns > a.btn.btn-primary.btn-next.align-right > span')
             .should('contain', 'Book for NOW')
             .click()
@@ -148,7 +148,7 @@ describe('My Fist Test', function () {
             .should('contain', 'Looking forward to serving you!')
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(2) > div.message-panel > div.message')
             .should('contain', 'Thank you for choosing our service.')
-        cy.screenshot()
+        // cy.screenshot()
 
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(2) > div.btns > a:nth-child(1) > span')
             .should('contain', 'Close')
@@ -180,7 +180,7 @@ describe('My Fist Test', function () {
             .type('{downarrow}{enter}')
 
         cy.wait(1000)
-        cy.screenshot()
+        // cy.screenshot()
         cy.get('#contentStep1 > div > a > span').click()
 
         cy.wait(4000)
@@ -191,7 +191,7 @@ describe('My Fist Test', function () {
         // cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(3) > span > span')
         //     .should('contain', '17 minutes')
 
-        cy.screenshot()
+        // cy.screenshot()
         cy.wait(500)
 
         cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.selectDiv > a:nth-child(2)').click()
@@ -259,7 +259,7 @@ describe('My Fist Test', function () {
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
         cy.wait(2000)
-        cy.screenshot()
+        // cy.screenshot()
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 
         // Payment
@@ -279,7 +279,7 @@ describe('My Fist Test', function () {
         cy.get('input[name="cvv"]')
             .type('123')
             .should('have.value', '123')
-        cy.screenshot()
+        // cy.screenshot()
         cy.wait(500)
         cy.get('#app > div:nth-child(4) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 
@@ -316,7 +316,7 @@ describe('My Fist Test', function () {
             })
 
         cy.wait(1000)
-        cy.screenshot()
+        // cy.screenshot()
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.btns > a.btn.btn-primary.btn-next.align-right > span')
             .should('contain', 'Reserve')
             .click()
@@ -331,7 +331,7 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(2) > div.message-panel > div.message > span')
             .should('contain', 'A confirmation email has been sent to tester.qup@gmail.com.')
 
-        cy.screenshot()
+        // cy.screenshot()
 
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(2) > div.btns > a:nth-child(1) > span')
             .should('contain', 'Close')
