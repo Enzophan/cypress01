@@ -8,8 +8,11 @@ describe('Web Booking - Login', function () {
             return false
         })
 
-        cy.visit('https://wb.qupworld.com/booking.html?fleet=testsite', { timeout: 30000 })
+        cy.visit('http://wb.local.qup.vn/booking.html?fleet=hoanglocal', { timeout: 30000 })
         cy.viewport(1280, 720)
+
+        cy.get('#body > div.chooseLanguage.col-xs-12 > select')
+            .select('en')
 
         cy.contains('Want to book a ride?').wait(2000)
         cy.url()
@@ -26,8 +29,8 @@ describe('Web Booking - Login', function () {
 
         cy.get('#app-container > div > div.container > div > div > form > div:nth-child(1) > div > div > div > input')
             .clear()
-            .type('+12057778884')
-            .should('have.value', '+12057778884')
+            .type('+84903333333')
+            .should('have.value', '+84903333333')
 
         cy.get('#app-container > div > div.container > div > div > form > div:nth-child(2) > div > input')
             .clear()
@@ -91,6 +94,81 @@ describe('Web Booking - Login', function () {
         cy.wait(5000)
         cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > div > ul > li > img', { timeout: 30000 })
         cy.log('Add card successful')
+
+
+        // Lan 2
+        // Payment Method
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-2.col-lg-offset-1.col-lg-2.lefBar > div > ul > li:nth-child(2)')
+            .click()
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > select:nth-child(2)')
+            .select('home')
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > span')
+            .click()
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.formAddCard > div > div > div > div > form > div', { timeout: 30000 })
+        cy.get('input[name="cardHolder"]')
+            .type('AUTO TEST')
+            .should('have.value', 'AUTO TEST')
+        cy.wait(5000)
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.formAddCard > div > div > div > div > form > div > div > form > div:nth-child(2) > div > div > div > iframe')
+            .then(($element) => {
+                const $body = $element.contents().find('body')
+                let stripe = cy.wrap($body)
+                stripe.find('input[name="cardnumber"]').eq(0).click().type('4111111111111111')
+                cy.wait(500)
+                stripe = cy.wrap($body)
+                stripe.find('input[name="exp-date"]').eq(0).click().type('1221')
+                cy.wait(500)
+                stripe = cy.wrap($body)
+                stripe.find('input[name="cvc"]').eq(0).click().type('222')
+                cy.wait(500)
+                stripe = cy.wrap($body)
+                stripe.find('input[name="postal"]').eq(0).click().type('98128')
+            })
+        cy.wait(2000)
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.formAddCard > div > div > div > div > form > div > div > form > div.divSub.formcard > button.saveCard')
+            .click()
+        cy.wait(5000)
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > div > ul > li > img', { timeout: 30000 })
+        cy.log('Add card successful')
+
+
+         // Lan 3
+        // Payment Method
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-2.col-lg-offset-1.col-lg-2.lefBar > div > ul > li:nth-child(2)')
+            .click()
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > select:nth-child(2)')
+            .select('home')
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > span')
+            .click()
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.formAddCard > div > div > div > div > form > div', { timeout: 30000 })
+        cy.get('input[name="cardHolder"]')
+            .type('AUTO TEST')
+            .should('have.value', 'AUTO TEST')
+        cy.wait(5000)
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.formAddCard > div > div > div > div > form > div > div > form > div:nth-child(2) > div > div > div > iframe')
+            .then(($element) => {
+                const $body = $element.contents().find('body')
+                let stripe = cy.wrap($body)
+                stripe.find('input[name="cardnumber"]').eq(0).click().type('5555555555554444')
+                cy.wait(500)
+                stripe = cy.wrap($body)
+                stripe.find('input[name="exp-date"]').eq(0).click().type('1221')
+                cy.wait(500)
+                stripe = cy.wrap($body)
+                stripe.find('input[name="cvc"]').eq(0).click().type('222')
+                cy.wait(500)
+                stripe = cy.wrap($body)
+                stripe.find('input[name="postal"]').eq(0).click().type('98128')
+            })
+        cy.wait(2000)
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.formAddCard > div > div > div > div > form > div > div > form > div.divSub.formcard > button.saveCard')
+            .click()
+        cy.wait(5000)
+        cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > div > ul > li > img', { timeout: 30000 })
+        cy.log('Add card successful')
+
+
+
 
         cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-10.col-lg-8 > div > div:nth-child(2) > div.myPayment > div > ul')
             .within(() => {
