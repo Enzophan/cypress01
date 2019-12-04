@@ -144,7 +144,7 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '$126.71')
+                cy.get('td[class="val confirmEta"]').should('contain', '$132.59')
             })
 
         cy.wait(1000)
@@ -235,8 +235,10 @@ describe('My Fist Test', function () {
 
         cy.get('input[name="time"]')
             .click()
+        // Select Date
         cy.get('#ui-timepicker-div > table > tbody > tr > td.ui-timepicker-hours > table > tbody > tr:nth-child(4) > td:nth-child(6)')
             .click()
+        // Select Time
         cy.get('#ui-timepicker-div > table > tbody > tr > td.ui-timepicker-minutes > table > tbody > tr:nth-child(4) > td:nth-child(3)')
             .click()
 

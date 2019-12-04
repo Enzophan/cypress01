@@ -78,29 +78,64 @@ describe('My Fist Test', function () {
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > select')
             .select('2')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div > div > label')
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div > div > label')
+        //     .click()
+
+        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > button > span')
             .click()
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(1) > input')
-            .type('Cy Test')
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(1) > input')
+        //     .type('Cy Test')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(2) > input')
-            .type('4111111111111111')
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(2) > input')
+        //     .type('4111111111111111')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-7 > div > input')
-            .type('1221')
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-7 > div > input')
+        //     .type('1221')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-5 > div > input')
-            .type('222')
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-5 > div > input')
+        //     .type('222')
 
+        // Payment
+        // Stripe
+        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div > form > div:nth-child(1) > div > div > input')
+            .type('AUTO TEST')
+            .should('have.value', 'AUTO TEST')
+        cy.wait(5000)
+        cy.get('#card-element > div > iframe')
+            .then(($element) => {
+                const $body = $element.contents().find('body')
+                let stripe = cy.wrap($body)
+                stripe.find('input[name="cardnumber"]').eq(0).click().type('4242424242424242')
+                stripe = cy.wrap($body)
+                stripe.find('input[name="exp-date"]').eq(0).click().type('1221')
+                stripe = cy.wrap($body)
+                stripe.find('input[name="cvc"]').eq(0).click().type('222')
+                stripe = cy.wrap($body)
+                stripe.find('input[name="postal"]').eq(0).click().type('98128')
+            })
         cy.wait(3000)
-
         cy.screenshot()
+        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div > form > div:nth-child(3) > div > button')
+            .click()
+        cy.wait(5000)
 
+        // Create Book
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div.new-booking-button-container.col-xs-12 > div > button.btn-save.btn.btn-default')
+            .click()
+        cy.wait(5000)
+
+        cy.get('#root > div > div.c011.c012 > div > div > div > div > div > div > h4', { timeout: 30000 })
+
+        cy.get('#root > div > div.fill > div.sidebar-wrapper > ul > li:nth-child(5) > a > div.menu-text > span')
             .click()
 
         cy.wait(5000)
+
+        cy.get('#tab-pane-0 > div.gridViewTable > div > div > div.fixedDataTableLayout_rowsContainer > div:nth-child(3) > div:nth-child(1) > div > div.fixedDataTableRowLayout_body > div:nth-child(1) > div > div > div > div > div > div > div', { timeout: 10000 })
+        cy.wait(5000)
+
+
     })
 
 
@@ -196,27 +231,69 @@ describe('My Fist Test', function () {
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > select')
             .select('2')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div > div > label')
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div > div > label')
+        //     .click()
+
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(1) > input')
+        //     .type('Cy Test')
+
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(2) > input')
+        //     .type('4111111111111111')
+
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-7 > div > input')
+        //     .type('1221')
+
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-5 > div > input')
+        //     .type('222')
+
+        // cy.wait(3000)
+
+        // cy.screenshot()
+
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div.new-booking-button-container.col-xs-12 > div > button.btn-save.btn.btn-default')
+        //     .click()
+
+        // Payment
+        // Stripe
+        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > button > span')
             .click()
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(1) > input')
-            .type('Cy Test')
-
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div:nth-child(2) > input')
-            .type('4111111111111111')
-
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-7 > div > input')
-            .type('1221')
-
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > div:nth-child(3) > div.form-group > div.row > div.col-md-5 > div > input')
-            .type('222')
-
+        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div > form > div:nth-child(1) > div > div > input')
+            .type('AUTO TEST')
+            .should('have.value', 'AUTO TEST')
+        cy.wait(5000)
+        cy.get('#card-element > div > iframe')
+            .then(($element) => {
+                const $body = $element.contents().find('body')
+                let stripe = cy.wrap($body)
+                stripe.find('input[name="cardnumber"]').eq(0).click().type('4242424242424242')
+                stripe = cy.wrap($body)
+                stripe.find('input[name="exp-date"]').eq(0).click().type('1221')
+                stripe = cy.wrap($body)
+                stripe.find('input[name="cvc"]').eq(0).click().type('222')
+                stripe = cy.wrap($body)
+                stripe.find('input[name="postal"]').eq(0).click().type('98128')
+            })
         cy.wait(3000)
-
         cy.screenshot()
+        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div > form > div:nth-child(3) > div > button')
+            .click()
+        cy.wait(5000)
 
+        // Create Book
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div.new-booking-button-container.col-xs-12 > div > button.btn-save.btn.btn-default')
             .click()
+        cy.wait(5000)
+
+        cy.get('#root > div > div.c011.c012 > div > div > div > div > div > div > h4', { timeout: 30000 })
+
+        cy.get('#root > div > div.fill > div.sidebar-wrapper > ul > li:nth-child(5) > a > div.menu-text > span')
+            .click()
+
+        cy.wait(5000)
+
+        cy.get('#tab-pane-0 > div.gridViewTable > div > div > div.fixedDataTableLayout_rowsContainer > div:nth-child(3) > div:nth-child(1) > div > div.fixedDataTableRowLayout_body > div:nth-child(1) > div > div > div > div > div > div > div', { timeout: 10000 })
+        cy.wait(5000)
 
     })
 
