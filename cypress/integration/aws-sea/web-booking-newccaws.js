@@ -144,7 +144,8 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.97')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.97')
+                cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.91')
             })
 
         cy.wait(1000)
@@ -358,7 +359,9 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', 'MYR151.70')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'MYR151.70')
+                cy.get('td[class="val confirmEta"]').should('contain', 'MYR151.55')
+
             })
 
         cy.wait(1000)

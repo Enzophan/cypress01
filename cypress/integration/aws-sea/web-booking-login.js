@@ -35,8 +35,6 @@ describe('Web Booking - Login', function () {
 
         cy.wait(1000)
 
-
-
         cy.get('#app-container > div > div.InputSteps > div.myAccount > div.container-fluid > div > div.col-xs-2.col-lg-offset-1.col-lg-2.lefBar > div > ul', { timeout: 30000 })
             .within(() => {
                 cy.get('li:nth-child(1)').should('contain', 'My Bookings')
