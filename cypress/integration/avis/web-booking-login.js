@@ -4,12 +4,13 @@ describe('Web Booking - Login', function () {
     it('Visit the web booking to verify login with iPhone 8', function () {
         cy.visit('https://wb-avis.qupworld.com/booking.html?fleet=qademo', { timeout: 30000 })
         cy.viewport(375, 667)
+        cy.get('#body > div.chooseLanguage.col-xs-12 > select')
+            .select('en')
 
         cy.contains('Want to book a ride?').wait(2000)
         cy.url()
             .should('include', '#book-info')
-        cy.get('#body > div.chooseLanguage.col-xs-12 > select')
-            .select('en')
+
         cy.screenshot('Login 1 - English')
         cy.wait(1000)
 
@@ -66,7 +67,11 @@ describe('Web Booking - Login', function () {
         cy.visit('https://wb-avis.qupworld.com/booking.html?fleet=qademo', { timeout: 30000 })
         cy.viewport(1280, 720)
 
-        cy.contains('Want to book a ride?').wait(2000)
+        cy.get('#body > div.chooseLanguage.col-xs-12 > select')
+            .select('zh_CN')
+
+        // cy.contains('Want to book a ride?').wait(2000)
+        cy.contains('想预约一下吗？').wait(2000)
         cy.url()
             .should('include', '#book-info')
         cy.get('#body > div.chooseLanguage.col-xs-12 > select')

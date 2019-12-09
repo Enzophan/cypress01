@@ -110,8 +110,8 @@ describe('Verify Web Booking on AVIS', function () {
             .type('4111111111111111')
             .should('have.value', '4111 1111 1111 1111')
         cy.get('input[name="expired"]')
-            .type('12/19')
-            .should('have.value', '12 / 19')
+            .type('12/21')
+            .should('have.value', '12 / 21')
         cy.get('input[name="cvv"]')
             .type('123')
             .should('have.value', '123')
@@ -151,7 +151,7 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.73')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.10')
             })
 
         cy.wait(1000)
@@ -310,8 +310,8 @@ describe('Verify Web Booking on AVIS', function () {
             .type('4111111111111111')
             .should('have.value', '4111 1111 1111 1111')
         cy.get('input[name="expired"]')
-            .type('12/19')
-            .should('have.value', '12 / 19')
+            .type('12/21')
+            .should('have.value', '12 / 21')
         cy.get('input[name="cvv"]')
             .type('123')
             .should('have.value', '123')
@@ -356,7 +356,7 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '估计车费')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.63')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.68')
             })
 
         cy.wait(1000)
