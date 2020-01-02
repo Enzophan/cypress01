@@ -73,8 +73,8 @@ describe('My Fist Test', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019A')
-            .should('have.value', 'NAM2019A')
+            .type('NAM2020A')
+            .should('have.value', 'NAM2020A')
         cy.wait(1000)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
@@ -144,7 +144,7 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '$132.59')
+                cy.get('td[class="val confirmEta"]').should('contain', '$132.52')
             })
 
         cy.wait(1000)
@@ -267,8 +267,8 @@ describe('My Fist Test', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019P')
-            .should('have.value', 'NAM2019P')
+            .type('NAM2020P')
+            .should('have.value', 'NAM2020P')
         cy.wait(1000)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
