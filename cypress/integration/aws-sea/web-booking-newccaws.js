@@ -73,8 +73,8 @@ describe('Verify Web Booking on Commericial', function () {
         //     .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019A')
-            .should('have.value', 'NAM2019A')
+            .type('NAM2020A')
+            .should('have.value', 'NAM2020A')
         cy.wait(1000)
         // cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-12.promoDiv > div.col-xs-5 > div').click()
@@ -145,7 +145,8 @@ describe('Verify Web Booking on Commericial', function () {
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.97')
-                cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.91')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.91')
+                cy.get('td[class="val confirmEta"]').should('contain', 'MYR145.71')
             })
 
         cy.wait(1000)
@@ -276,8 +277,8 @@ describe('Verify Web Booking on Commericial', function () {
         //     .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019A')
-            .should('have.value', 'NAM2019A')
+            .type('NAM2020A')
+            .should('have.value', 'NAM2020A')
         cy.wait(1000)
 
         // Apply Promo

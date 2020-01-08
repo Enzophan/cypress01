@@ -74,7 +74,7 @@ describe('New Booking on Command Center', function () {
 
         // Enter promo code
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div > input')
-            .type('NAM2019A')
+            .type('NAM2020A')
             .wait(1000)
 
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div > span')
@@ -85,29 +85,29 @@ describe('New Booking on Command Center', function () {
 
         // Select Payment Method
         cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > select')
-            .select('2')
+            .select('1')
 
-        cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > button > span')
-            .click()
+        // cy.get('#page-content > span > div > div > div.col-md-7.col-xs-12 > div:nth-child(3) > div:nth-child(3) > div.form-group > button > span')
+        //     .click()
 
-        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(1) > div > input')
-            .type('Cy Test')
+        // cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(1) > div > input')
+        //     .type('Cy Test')
 
-        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(2) > div > input')
-            .type('5111111111111118')
+        // cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(2) > div > input')
+        //     .type('5111111111111118')
 
-        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(3) > div > input')
-            .type('0521')
+        // cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(3) > div > input')
+        //     .type('0521')
 
-        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(4) > div > input')
-            .type('100')
+        // cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.row > div:nth-child(4) > div > input')
+        //     .type('100')
 
-        cy.screenshot('add-credit-card')
+        // cy.screenshot('add-credit-card')
 
-        cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.text-center.mt-lg > button')
-            .click()
+        // cy.get('body > div:nth-child(12) > div.fade.in.modal > div > div > div.modal-body > div > div.text-center.mt-lg > button')
+        //     .click()
 
-        cy.wait(3000)
+        // cy.wait(3000)
 
         cy.screenshot()
 
