@@ -73,8 +73,8 @@ describe('Verify Web Booking on Commericial', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019')
-            .should('have.value', 'NAM2019')
+            .type('NAM2020')
+            .should('have.value', 'NAM2020')
         cy.wait(1000)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
@@ -284,8 +284,8 @@ describe('Verify Web Booking on Commericial', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019P')
-            .should('have.value', 'NAM2019P')
+            .type('NAM2020P')
+            .should('have.value', 'NAM2020P')
         cy.wait(1000)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
