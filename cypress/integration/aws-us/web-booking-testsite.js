@@ -28,7 +28,7 @@ describe('Verify Web Booking on Commericial', function () {
         cy.screenshot('Book Now 1 - Pickup and destination')
         cy.get('#contentStep1 > div > a > span').click()
 
-        cy.wait(4000)
+        cy.wait(10000)
         // cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(1) > span:nth-child(2) > span')
         //     .should('contain', '$89.17')
         // cy.get('#CarTypes > div.item.row.active > div.col-xs-12.col-sm-3.col-md-3.col-lg-3 > div.estimation > div:nth-child(2) > span > span')
@@ -194,7 +194,7 @@ describe('Verify Web Booking on Commericial', function () {
         cy.screenshot('Book Later 1 - Pickup & destination')
         cy.get('#contentStep1 > div > a > span').click()
 
-        cy.wait(4000)
+        cy.wait(10000)
         cy.get('#CarTypes > div.item.row.active', { timeout: 30000 })
 
         // Check ETA Fare of Sedan
