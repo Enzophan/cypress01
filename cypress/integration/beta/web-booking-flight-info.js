@@ -156,7 +156,8 @@ describe('From To Airport', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '$99.35')
+                // cy.get('td[class="val confirmEta"]').should('contain', '$99.35')
+                cy.get('td[class="val confirmEta"]').should('contain', '$101.06')
             })
 
         cy.wait(1000)

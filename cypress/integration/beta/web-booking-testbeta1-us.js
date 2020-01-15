@@ -138,7 +138,9 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '$128.49')
+                // cy.get('td[class="val confirmEta"]').should('contain', '$128.49')
+                cy.get('td[class="val confirmEta"]').should('contain', '$129.30')
+
             })
 
         cy.wait(1000)
