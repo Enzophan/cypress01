@@ -92,8 +92,8 @@ describe('Verify Web Booking on AVIS', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019A')
-            .should('have.value', 'NAM2019A')
+            .type('NAM2020A')
+            .should('have.value', 'NAM2020A')
         cy.wait(1000)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
         // cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-12.promoDiv > div.col-xs-5 > div').click()
@@ -113,8 +113,8 @@ describe('Verify Web Booking on AVIS', function () {
             .type('12/21')
             .should('have.value', '12 / 21')
         cy.get('input[name="cvv"]')
-            .type('123')
-            .should('have.value', '123')
+            .type('111')
+            .should('have.value', '111')
 
         cy.screenshot('Book Now 4 - Add Credit card')
         cy.wait(500)
@@ -151,7 +151,9 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.10')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.10')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.68')
+
             })
 
         cy.wait(1000)
@@ -249,7 +251,8 @@ describe('Verify Web Booking on AVIS', function () {
         // Choose Date
         cy.get('input[name="date"]')
             .click()
-        cy.get('#ui-datepicker-div > table > tbody > tr:nth-child(3) > td:nth-child(7)')
+        // cy.get('#ui-datepicker-div > table > tbody > tr:nth-child(3) > td:nth-child(7)')
+        cy.get('#ui-datepicker-div > table > tbody > tr:nth-child(4) > td:nth-child(7)')
             .click()
 
         // Choose Time
@@ -290,8 +293,8 @@ describe('Verify Web Booking on AVIS', function () {
             .should('have.value', '5')
 
         cy.get('input[name="promoCode"]')
-            .type('NAM2019A')
-            .should('have.value', 'NAM2019A')
+            .type('NAM2020A')
+            .should('have.value', 'NAM2020A')
         cy.wait(1000)
 
         // Apply Promo
@@ -313,8 +316,8 @@ describe('Verify Web Booking on AVIS', function () {
             .type('12/21')
             .should('have.value', '12 / 21')
         cy.get('input[name="cvv"]')
-            .type('123')
-            .should('have.value', '123')
+            .type('111')
+            .should('have.value', '111')
 
         cy.screenshot('Book Now 4 - Add Credit card')
         cy.wait(500)
@@ -356,7 +359,8 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '估计车费')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.68')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.68')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.92')
             })
 
         cy.wait(1000)
