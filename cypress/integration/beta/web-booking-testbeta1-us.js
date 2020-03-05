@@ -268,7 +268,7 @@ describe('My Fist Test', function () {
         cy.wait(1000)
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(9) > div.col-xs-6.promoDiv > div.col-xs-5 > div').click()
 
-        cy.wait(2000)
+        cy.wait(3000)
         cy.screenshot('03. Passenger info of US Location')
         cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div.btns > a.btn.btn-primary.btn-next.align-right > span').click()
 

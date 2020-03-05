@@ -331,7 +331,7 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(4)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Destination')
-                cy.get('td[class="val confirmDestination"]').should('contain', 'Hyatt Regency Danang Resort and Spa, Trường Sa, Hoa Hai, Ngũ Hành Sơn, Da Nang')
+                cy.get('td[class="val confirmDestination"]').should('contain', 'Hyatt Regency Danang Resort And Spa, Trường Sa, Hoa Hai, Ngũ Hành Sơn, Da Nang')
             })
 
 
@@ -344,7 +344,8 @@ describe('My Fist Test', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '$31.54')
+                // cy.get('td[class="val confirmEta"]').should('contain', '$31.54')
+                cy.get('td[class="val confirmEta"]').should('contain', '$40.84')
             })
 
         cy.wait(1000)
