@@ -144,7 +144,8 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CA$116.99')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CA$117.02')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CA$116.99')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CA$116.97')
             })
 
@@ -180,13 +181,13 @@ describe('Verify Web Booking on Commericial', function () {
         cy.url()
             .should('include', '#book-info')
         cy.get('#contentStep1 > div > div:nth-child(1) > input')
-            .type('Grey Nuns Community Hospital', { delay: 50 })
+            .type('Grey Nuns Community Hospital', { delay: 100 })
             .should('have.value', 'Grey Nuns Community Hospital')
             .wait(2000)
             .type('{downarrow}{enter}')
 
         cy.get('#contentStep1 > div > div:nth-child(2) > input')
-            .type('Edmonton International Airport', { delay: 50 })
+            .type('Edmonton International Airport', { delay: 100 })
             .should('have.value', 'Edmonton International Airport')
             .wait(2000)
             .type('{downarrow}{enter}')

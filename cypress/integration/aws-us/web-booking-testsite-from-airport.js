@@ -116,7 +116,7 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(2)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Pickup location')
-                cy.get('td[class="val confirmAddress"]').should('contain', 'Edmonton International Airport YEG (YEG), Airport Road, Edmonton International Airport, AB')
+                cy.get('td[class="val confirmAddress"]').should('contain', 'Edmonton International Airport (YEG), Airport Road, Edmonton International Airport, AB')
             })
 
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(3)')
@@ -146,7 +146,8 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(7)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CA$244.04')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CA$244.09')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CA$244.04')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CA$244.00')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CA$244.01')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CA$241.01')
@@ -343,7 +344,7 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(3)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Pickup location')
-                cy.get('td[class="val confirmAddress"]').should('contain', 'Edmonton International Airport YEG (YEG), Airport Road, Edmonton International Airport, AB')
+                cy.get('td[class="val confirmAddress"]').should('contain', 'Edmonton International Airport (YEG), Airport Road, Edmonton International Airport, AB')
             })
 
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(4)')
