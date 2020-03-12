@@ -141,9 +141,14 @@ describe('Verify Web Booking on Commericial', function () {
                 cy.get('td[class="val confirmVehicle"]').should('contain', 'Taxi')
             })
 
+        // https://docs.cypress.io/guides/references/assertions.html#BDD-Assertions
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
+                cy.get('td[class="val confirmEta"]').should(($eta1) => {
+                    expect($eta1.text()).to.have.string('MYR 121.83')
+                })
+                // cy.get('td[class="val confirmEta"]').should('contain', 'MYR 121.83')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.97')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'MYR121.91')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'MYR145.71')
@@ -360,6 +365,7 @@ describe('Verify Web Booking on Commericial', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'MYR151.47')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'MYR151.70')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'MYR151.55')
 

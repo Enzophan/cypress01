@@ -32,13 +32,13 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#contentStep1 > div > div:nth-child(1) > input')
             .type('上海新天地南里', { delay: 50 })
             .should('have.value', '上海新天地南里')
-            .wait(2000)
+            .wait(3000)
             .type('{downarrow}{enter}')
 
         cy.get('#contentStep1 > div > div:nth-child(2) > input')
             .type('Shanghai World Financial Center', { delay: 50 })
             .should('have.value', 'Shanghai World Financial Center')
-            .wait(2000)
+            .wait(3000)
             .type('{downarrow}{enter}')
 
         cy.wait(1000)
@@ -152,7 +152,8 @@ describe('Verify Web Booking on AVIS', function () {
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.10')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.68')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.68')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.91')
 
             })
 
@@ -196,13 +197,13 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#contentStep1 > div > div:nth-child(1) > input')
             .type('上海市浦东新区S1迎宾高速', { delay: 50 })
             .should('have.value', '上海市浦东新区S1迎宾高速')
-            .wait(2000)
+            .wait(3000)
             .type('{downarrow}{enter}')
 
         cy.get('#contentStep1 > div > div:nth-child(2) > input')
             .type('上海市浦东新区浦东南路855号', { delay: 50 })
             .should('have.value', '上海市浦东新区浦东南路855号')
-            .wait(2000)
+            .wait(3000)
             .type('{downarrow}{enter}')
 
         cy.wait(3000)
@@ -360,7 +361,8 @@ describe('Verify Web Booking on AVIS', function () {
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '估计车费')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.68')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.92')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.92')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥205.61')
             })
 
         cy.wait(1000)
