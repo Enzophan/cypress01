@@ -157,7 +157,8 @@ describe('From To Airport', function () {
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
                 // cy.get('td[class="val confirmEta"]').should('contain', '$99.35')
-                cy.get('td[class="val confirmEta"]').should('contain', '$101.06')
+                // cy.get('td[class="val confirmEta"]').should('contain', '$101.06')
+                cy.get('td[class="val confirmEta"]').should('contain', '$100.73')
             })
 
         cy.wait(1000)
@@ -363,7 +364,7 @@ describe('From To Airport', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Destination')
-                cy.get('td[class="val confirmDestination"]').should('contain', 'Furama Resort Danang, Võ Nguyên Giáp, Khuê Mỹ, Ngũ Hành Sơn, Da Nang')
+                cy.get('td[class="val confirmDestination"]').should('contain', 'Furama Resort Danang, Võ Nguyên Giáp, Street, Khuê Mỹ, Ngũ Hành Sơn, Da Nang')
             })
 
 
@@ -376,7 +377,8 @@ describe('From To Airport', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(9)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
-                cy.get('td[class="val confirmEta"]').should('contain', '$1,200.52')
+                // cy.get('td[class="val confirmEta"]').should('contain', '$1,200.52')
+                cy.get('td[class="val confirmEta"]').should('contain', '$98.07')
             })
 
         cy.wait(1000)

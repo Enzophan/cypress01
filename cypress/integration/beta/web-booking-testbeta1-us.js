@@ -340,6 +340,7 @@ describe('My Fist Test', function () {
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
                 cy.get('td[class="val confirmEta"]').should('contain', '$50.76')
+                // cy.get('td[class="val confirmEta"]').should('contain', '$68.66')
             })
 
         cy.wait(1000)
