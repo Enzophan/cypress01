@@ -70,9 +70,9 @@ describe('Verify Web Booking on AVIS', function () {
 
         cy.get('input[type="tel"]')
             .clear()
-            .type( phoneNumber())
-            // .type('13664646659')
-            // .should('have.value', '+8613664646659')
+            .type(phoneNumber())
+        // .type('13664646659')
+        // .should('have.value', '+8613664646659')
 
         cy.get('input[name="email"]')
             .type('tester.qup@gmail.com', { delay: 100 })
@@ -153,7 +153,8 @@ describe('Verify Web Booking on AVIS', function () {
                 cy.get('td[class="txt"]').should('contain', 'Estimate fare')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.10')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.68')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.91')
+                // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥60.91')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥61.61')
 
             })
 
@@ -242,8 +243,8 @@ describe('Verify Web Booking on AVIS', function () {
 
         cy.get('input[type="tel"]')
             .clear()
-            .type('13664646659')
-            .should('have.value', '+8613664646659')
+            .type('13664646654')
+            .should('have.value', '+8613664646654')
 
         cy.get('input[name="email"]')
             .type('tester.qup@gmail.com', { delay: 100 })
@@ -274,15 +275,19 @@ describe('Verify Web Booking on AVIS', function () {
         //     .type(todaysTime, { delay: 100 })
         //     .should('have.value', todaysTime)
 
-        // cy.get('input[name="flight"]')
-        //     .type('VN 9999')
-        //     .should('have.value', 'VN 9999')
+        cy.get('input[name="flight"]')
+            .type('VN 9999')
+            .should('have.value', 'VN 9999')
 
-        cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(7) > div > div > select')
-            // .select('flat')
-            // .should('have.value', 'flat')
-            .select('regular')
-            .should('have.value', 'regular')
+        cy.get('select[name="meetDriver"]')
+            .select("1")
+
+        // cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(7) > div > div > select')
+        cy.get('#app > div:nth-child(3) > div.container > div:nth-child(2) > div > div:nth-child(7) > div > div:nth-child(1) > select')
+            .select('flat')
+            .should('have.value', 'flat')
+        // .select('regular')
+        // .should('have.value', 'regular')
 
         cy.get('input[name="note"]')
             .type('Cypress Auto Test Note')
@@ -330,7 +335,7 @@ describe('Verify Web Booking on AVIS', function () {
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(1)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '服务')
-                cy.get('td[class="val confirmService"]').should('contain', '单程')
+                cy.get('td[class="val confirmService"]').should('contain', '接机')
             })
 
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(3)')
@@ -339,30 +344,35 @@ describe('Verify Web Booking on AVIS', function () {
                 cy.get('td[class="val confirmAddress"]').should('contain', 'China')
             })
 
-        // cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(4)')
-        //     .within(() => {
-        //         cy.get('td[class="txt"]').should('contain', 'Flight')
-        //         cy.get('td[class="val confirmFlightInfo"]').should('contain', 'VN 9999')
-        //     })
-
         cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(4)')
+            .within(() => {
+                cy.get('td[class="txt"]').should('contain', '航班')
+                cy.get('td[class="val confirmFlightInfo"]').should('contain', 'VN 9999')
+            })
+
+        cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
+            .within(() => {
+                cy.get('td[class="val confirmMeetDriver"]').should('contain', '等待 = CN¥5.00')
+            })
+
+        cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '目的地')
                 cy.get('td[class="val confirmDestination"]').should('contain', 'China')
             })
 
-        cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(5)')
+        cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(7)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '车辆类型')
                 cy.get('td[class="val confirmVehicle"]').should('contain', 'DN - Compact')
             })
 
-        cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(6)')
+        cy.get('#app > div.InfoSteps > div.book-summary.container > div > div:nth-child(1) > div.booking-summary > table > tbody > tr:nth-child(8)')
             .within(() => {
                 cy.get('td[class="txt"]').should('contain', '估计车费')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.68')
                 // cy.get('td[class="val confirmEta"]').should('contain', 'CN¥204.92')
-                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥205.61')
+                cy.get('td[class="val confirmEta"]').should('contain', 'CN¥36.50')
             })
 
         cy.wait(1000)

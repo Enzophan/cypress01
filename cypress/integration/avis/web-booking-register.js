@@ -44,8 +44,8 @@ describe('Web Booking - Register', function () {
             .should('have.value', 'Cy')
 
         cy.get('input[name="lastName"]')
-            .type('Auto Test', { delay: 100 })
-            .should('have.value', 'Auto Test')
+            .type('Auto Register', { delay: 100 })
+            .should('have.value', 'Auto Register')
 
         cy.get('#app-container > div > div.loginStep.InputSteps > div.container > div > div > form > div:nth-child(4) > div > select')
             .select("1")
